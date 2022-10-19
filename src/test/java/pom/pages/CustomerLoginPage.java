@@ -1,9 +1,12 @@
 package pom.pages;
 
+import org.apache.xmlbeans.impl.xb.xsdschema.ListDocument;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pom.base.BaseTest;
+
+import java.util.List;
 
 public class CustomerLoginPage extends BaseTest {
 
@@ -15,6 +18,9 @@ public class CustomerLoginPage extends BaseTest {
 
     @FindBy(css = "[type='submit']")
     WebElement loginBtn;
+
+    @FindBy(css = ".error")
+    List<WebElement> error;
 
     public CustomerLoginPage(){
         PageFactory.initElements(driver, this);
@@ -39,6 +45,18 @@ public class CustomerLoginPage extends BaseTest {
         loginBtn.click();
         return new HomePage();
 
+    }
+
+    public CustomerLoginPage clickLogin(){
+        loginBtn.isDisplayed();
+        loginBtn.click();
+        return this;
+
+    }
+
+
+    public boolean hasErrorMessage(){
+        return error.size() > 0;
     }
 
 

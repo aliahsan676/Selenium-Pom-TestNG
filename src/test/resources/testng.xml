@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="E:/SQA Course/Selenium/Assignment-Selenium/Selenium-Pom-TestNG">
+        <classes>
+            <class name="pom.tests.CustomerLoginTest">
+                <methods>
+                    <include name="loginShouldSucceed"/>
+                    <include name="loginWithUsernameShouldFail"/>
+                    <include name="loginWithPasswordShouldFail"/>
+                </methods>
+            </class>
+            <class name="pom.tests.OpenAccountTest">
+                <methods>
+                    <include name="openAccountShouldSucceed"/>
+                </methods>
+            </class>
+            <class name="pom.tests.TransferFundsTest">
+                <methods>
+                    <include name="transferFundShouldSucceed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
